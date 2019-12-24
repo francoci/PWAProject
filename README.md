@@ -1,11 +1,15 @@
 # PWAProject
-Proyecto realizado para el curso Programador Web Avanzado. El sitio consiste en una página web de peliculas, en la cual se pueden realizar reseñas de las mismas. Existen dos tipos de usuarios, el usuario comun y el usuario del tipo admin.
+Proyecto realizado para el curso Programador Web Avanzado. Los archivos disponibles corresponden con los del Frontend (Angular), Backend (Node.JS - Express) y un archivo SQL con la base de datos, dentro de las respectivas carpetas. Para correrlo, descargar todo e iniciar un servidor local. 
+
+Mediante PHPMyAdmin u otro gestor de BD crear la base e importar las tablas con el archivo SQL. Luego, inicializar el backend mediante la terminal con el comando "nodemon npm start". Crear los campos MAIL_USER y MAIL_PASSWORD en el archivo .env del backend, con los correspondientes datos. Por ultimo, inicializar el Frontend con el comando "ng serve --open".
+
+El sitio consiste en una página web de peliculas, en la cual se pueden realizar reseñas de las mismas. Existen dos tipos de usuarios, el usuario comun y el usuario del tipo admin.
 
 Para una persona que no este registrada, las siguientes secciones están disponibles:
 
   - Home (Con un slider y las ultimas peliculas agregadas)
   - Peliculas (Listado de todas las peliculas, con la posibilidad de filtrar por genero y ordenar por antiguedad)
-  - Pagina de pelicula indiviudal (Con las reseñas para la misma)
+  - Pagina de pelicula individual (Con las reseñas para la misma)
   - Perfil (Aunque no accesible mediante el navbar, debera agregar un /perfil/idUsuario en la URL). Aquí se muestran las reseñas más           recientes realizadas por el usuario y las peliculas que marcó como favoritas recientemente
 
 Para registrarse, la persona debera acceder a la sección registro, accesible mediante el link del navbar. Una vez llenados los campos, recibira un mail con un link el cual deberá presionar para activar la cuenta. Una vez activada, podrá loguearse mediante la sección de login, accesible a través del navbar. Un usuario común, al loguearse, obtiene acceso a las siguientes funciones y/o secciones:
