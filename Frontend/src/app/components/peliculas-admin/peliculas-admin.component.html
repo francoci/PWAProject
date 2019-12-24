@@ -1,0 +1,86 @@
+<div class="container">
+
+    <h3>Cargar pelicula</h3>
+
+    <h4 class = "error general green" *ngIf = "mensajeGeneralNum == '1'; else error">{{mensajeGeneral}}</h4>
+
+    <ng-template #error>
+        <h4 class = "error general">{{mensajeGeneral}}</h4>
+    </ng-template>
+
+    <form [formGroup] = "form" (ngSubmit)="cargarPelicula()" class = "formPelicula">
+
+        <div class="camposTexto">
+
+            <div class="form-group">
+                <label for="nombrePelicula">Nombre Pelicula *</label> <br>
+
+                <span class = "error" *ngIf = "form.get('nombrePelicula').status != 'VALID' && form.get('nombrePelicula').touched">Campo requerido. Mín. tres caracteres.</span>
+
+                <input type="text" class = "form-control" name = "nombrePelicula" formControlName = "nombrePelicula" placeholder = "Nombre..">
+            </div>
+
+            <div class="form-group">
+                <label for="anoPelicula">Año de estreno *</label> <br>
+
+                <span class = "error" *ngIf = "form.get('anoPelicula').status != 'VALID' && form.get('anoPelicula').touched">Campo requerido. Máx. 4 digitos.</span>
+
+                <input type="text" class = "form-control" name = "anoPelicula" formControlName = "anoPelicula" placeholder = "Año..">
+            </div>
+
+            <label>Genero *</label> <br>
+            <h4 class = "error" *ngIf = "errorGenero != ''">{{errorGenero}}</h4>
+            <select #genero (change)="selectGenero(genero.value)">
+                <option value="0" selected disabled>--Género--</option>
+                <option value = "1">Acción</option>
+                <option value = "2">Ciencia Ficción</option>
+                <option value = "3">Terror</option>
+                <option value = "4">Suspenso</option>
+                <option value = "5">Drama</option>
+                <option value = "6">Comedia</option>
+                <option value = "7">Romance</option>
+                <option value = "8">Aventura</option>
+                <option value = "9">Musical</option>
+            </select>
+
+            <div class="form-group">
+                <label for="directorPelicula">Director *</label> <br>
+
+                <span class = "error" *ngIf = "form.get('directorPelicula').status != 'VALID' && form.get('directorPelicula').touched">Campo requerido. Solo letras.</span>
+
+                <input type="text" class = "form-control" name = "directorPelicula" formControlName = "directorPelicula" placeholder = "Director..">
+            </div>
+
+        </div>
+
+        <div class="campoImagen">
+                
+            <label>Imagen *</label>
+            <h4 class = "error" *ngIf = "errorImg != ''">{{errorImg}}</h4>
+            
+            <div class="uploadfilecontainer" >
+                <img [src]="imgURL" *ngIf="imgURL">  
+                <input hidden type="file" #fileInput (change)="preview($event)" name="file">
+            </div>
+
+            <div class="contBtn">
+                <a (click)="fileInput.click()">Cambiar</a>
+            </div>
+            
+        </div>
+
+        <div class="contTA">
+            <div class="form-group">
+                <label for="sinopsisPelicula">Sinopsis *</label> <br>
+
+                <span class = "error" *ngIf = "form.get('sinopsisPelicula').status != 'VALID' && form.get('sinopsisPelicula').touched">Campo requerido.</span>
+
+                <textarea class = "form-control sinopsis" formControlName = "sinopsisPelicula" name="sinopsisPelicula" placeholder = "Sinopsis.." maxlength="500"></textarea>
+            </div>
+        </div>
+
+        <div class="contBtnSubmit">
+            <button type="submit" [disabled] = "form.invalid">Subir</button>
+        </div>
+    </form>
+</div>

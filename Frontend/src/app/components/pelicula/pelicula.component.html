@@ -1,0 +1,128 @@
+ <div class="container">
+    <div class="row">
+
+        <div class="row contenedorPelicula">
+            <div class="col-3 imgBtn">
+                <div class = "imgPelicula">
+                    <img src = "{{'http://localhost:3000/' + pelicula[0].imagen_pelicula}}">
+                </div>
+                
+                <div class="botones"  *ngIf = "login">
+                    <button class = "boton" (click)="open(Modal)">Review</button>
+                </div>
+            </div>
+            <div class="col-8 h-75 sinopsis">
+                <h2>{{pelicula[0].nombre_pelicula}} ({{pelicula[0].ano_pelicula}})</h2>
+                
+                <div *ngIf = "login">
+
+                    <div *ngIf = "favorito; else nofavorito">
+                        <button class = "like"  (click) = "unlike()"><i class="fas fa-heart"></i></button>
+                    </div>
+
+                    <ng-template #nofavorito>
+                        <button class = "unlike" (click) = "like()"><i class="far fa-heart"></i></button>
+                    </ng-template>
+
+                </div>
+                <p>{{pelicula[0].sinopsis_pelicula}}</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="linea"></div>
+
+    <div class="contenedorResenas">
+
+        <div *ngIf = "message == ''; else noResena">
+            <h2>Reseñas de usuarios</h2>
+
+            <div class="row contenedorResena" *ngFor = "let r of resenas">
+                <div class="col-2 imgUser">
+                    <img src = "{{'http://localhost:3000/' + r.imagen_usuario}}">
+                </div>
+                <div class="col-10 resena">
+                    <h5>{{r.nombre_usuario}} {{r.apellido_usuario}}, {{r.fecha_resena | date : 'short'}}</h5>
+                    <h5>Puntaje: {{r.puntaje_resena}}/5 <i class="fas fa-star puntaje"></i></h5>
+                    <p>{{r.texto_resena}}</p>
+                </div>
+            </div>
+        </div>
+        
+        <ng-template #noResena>
+            <h2 class = "message">{{message}}</h2>
+        </ng-template>
+        
+    </div>
+</div>
+
+
+<modal #Modal>
+
+    <modal-header class = "modalHead">
+        Review
+    </modal-header>
+
+    <modal-content>
+
+        <span *ngIf = "message2 == '1'; else error" class = "mensajeGeneral">Reseña subida, pendiente de aprobación.</span>
+
+        <ng-template #estrellaClick>
+            <span class = "mensajeGeneral rojo">Hubo un error.</span>
+        </ng-template>
+
+        <form [formGroup] = "form">
+
+            <span class = "error errorRate" *ngIf = "errorPuntaje">Seleccione un puntaje.</span>
+
+            <div class="rating">
+                
+                <button (click) = "rate('1')">
+                    <i class="fas fa-star" *ngIf = "estrella1; else estrellaClick"></i>
+                </button>
+                
+                <button (click) = "rate('2')">
+                    <i class="fas fa-star" *ngIf = "estrella2; else estrellaClick"></i>
+                </button>
+
+                <button (click) = "rate('3')">
+                    <i class="fas fa-star" *ngIf = "estrella3; else estrellaClick"></i>
+                </button>
+                
+                <button (click) = "rate('4')">
+                    <i class="fas fa-star" *ngIf = "estrella4; else estrellaClick"></i>
+                </button>
+                
+                <button (click) = "rate('5')">
+                    <i class="fas fa-star" *ngIf = "estrella5; else estrellaClick"></i>
+                </button>
+
+            </div>
+
+            <ng-template #estrellaClick>
+                <i class="fas fa-star seleccionado"></i>
+            </ng-template>
+
+            <div class="form-group">
+
+                <label for="resena" class = "label">Reseña *</label> <br>
+
+                <span class = "error" *ngIf = "form.get('resena').status != 'VALID' && form.get('resena').touched">Campo requerido.</span>
+
+                <textarea class = "form-control modalTA" formControlName = "resena" name="resena" placeholder = "Reseña.." maxlength="350"></textarea>
+
+            </div>
+
+            <div class="contBtn">
+                <button type="button" [disabled]="operacion || form.invalid || desactivado" (click)="subirResena()" class="modalBtn">
+                    <i  *ngIf="operacion" class="fas fa-spinner fa-spin"></i>
+                    <span> Subir</span>
+                </button>
+            </div>
+            
+        </form>
+    </modal-content>
+
+</modal>
+

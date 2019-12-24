@@ -1,0 +1,48 @@
+<div class="container" *ngIf = "usuario; else noUsuario">
+    <div class="contDatos">
+        <div class="contImg">
+            <img src = "{{'http://localhost:3000/' + usuario[0].imagen_usuario}}"> 
+        </div>
+            
+        <h3>{{usuario[0].nombre_usuario}} {{usuario[0].apellido_usuario}}</h3>
+    </div>
+
+    <div class="resenasRecientes">
+        <h2>Reseñas recientes</h2>
+
+        <div class="resena" *ngFor = "let r of resenas">
+            <h4>{{r.nombre_pelicula}}</h4>
+            <h5>Puntaje: {{r.puntaje_resena}}/5 <i class="fas fa-star puntaje"></i></h5>
+            <p>" {{r.texto_resena}} "</p>
+        </div>
+    </div>
+
+    <div class="linea"></div>
+    
+    <div class="peliculasFavoritas">
+        <h2>Peliculas favoritas</h2>
+        <div class="pelicula" *ngFor = "let f of favoritos">
+            
+            <a [routerLink]="['/pelicula/', f.id_pelicula]">
+                <div class="imgPelicula">
+                    <img src = "{{'http://localhost:3000/' + f.imagen_pelicula}}">
+                </div>
+                
+                <div class="overlay"></div>
+
+                <div class="texto">
+                    <h2>{{f.nombre_pelicula}}</h2>
+                    <h4>({{f.ano_pelicula}})</h4>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+</div>
+
+<ng-template #noUsuario>
+    <div class="container">
+        <h2>Usuario inexistente.</h2>
+    </div>
+</ng-template>

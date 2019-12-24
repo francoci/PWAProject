@@ -1,0 +1,90 @@
+.container {
+    width: 480px;
+    height: 600px;
+    border-radius: 15px;
+    background-color:rgba(44, 48, 54,0.5);
+    padding: 0.5em;
+}
+
+.row {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.row h3 {
+    width: 100%;
+    font-family: 'Bree Serif', serif;
+    font-size: 4em;
+    color: white;
+    text-align: center;
+    text-shadow: -2px 2px black;
+    margin: 0.2em auto;
+}
+
+.row .formLogin {
+    width: 75%;
+    height: 80%;
+    margin: 0 auto;
+}
+
+.row .formLogin label {
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    color: white;
+    text-align: left;
+    text-shadow: -2px 2px black;
+    margin: 0.5em auto 0;
+}
+
+.error {
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2em;
+    color: #df2b0f;
+    text-align: left;
+    text-shadow: -1px 1px black;
+    margin: 0;
+}
+
+.general {
+    text-align: center;
+}
+
+.row .formLogin input {
+    width: 100%;
+    height: 60px;
+    background-color:rgba(24, 42, 68, 0.8);
+    border-radius: 10px;
+    border: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 22px;
+    line-height: 40px;
+    vertical-align: middle;
+    color: white;
+    text-align: left;
+}
+
+.contBtn {
+    width: 150px;
+    height: 60px;
+    margin: 1.8em auto;
+}
+
+.contBtn .btnLogin {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color:rgb(24, 42, 68);
+    font-family: 'Lato', sans-serif;
+    font-size: 22px;
+    color: white;
+}
+
+.contBtn .btnLogin:hover {
+    background-color:rgb(15, 28, 48);
+    transition: all 0.5s ease;
+}

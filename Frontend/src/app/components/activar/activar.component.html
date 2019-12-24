@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="contMensaje">
+        <h2>{{message}}</h2>
+
+        <div  *ngIf = "activado; else noActivado">
+            <div class="contImg">
+                <img src="http://localhost:3000/images/general/success.png">
+            </div>
+                    
+            <div class="contBtn">
+                <a [routerLink]="['/login']" class = "btn">Ir a Log In</a>
+            </div>
+        </div>
+        
+        <ng-template #noActivado>
+            <div class="contBtn">
+                <a [routerLink]="['/home']" class = "btn home">Ir a Home</a>
+            </div>
+        </ng-template>
+    </div>
+</div>

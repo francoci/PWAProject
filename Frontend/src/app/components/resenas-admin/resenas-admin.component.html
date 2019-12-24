@@ -1,0 +1,28 @@
+<div class="container">
+
+    <h4 *ngIf = "error; else noError">{{message}}</h4>
+
+    <ng-template #noError>
+        <h4 class = "green">{{message}}</h4>
+    </ng-template>
+
+    <table>
+        <tr>
+            <th>Usuario</th>
+            <th>Pelicula</th> 
+            <th>Puntaje</th>
+            <th>Reseña</th>
+            <th>Aprobar</th>
+            <th>Rechazar</th>
+        </tr>
+
+        <tr *ngFor = "let r of resenas">
+            <td>{{r.nombre_usuario}} {{r.apellido_usuario}}</td>
+            <td>{{r.nombre_pelicula}}</td>
+            <td>{{r.puntaje_resena}}/5 <i class="fas fa-star puntaje"></i></td>
+            <td class = "textoResena">{{r.texto_resena}}</td>
+            <td><button (click) = "aprobar(r.id_resena)" ><i class="fas fa-check"></i></button></td>
+            <td><button (click) = "rechazar(r.id_resena)" class = "rechazar"><i class="fas fa-times"></i></button></td>
+        </tr>
+    </table>
+</div>

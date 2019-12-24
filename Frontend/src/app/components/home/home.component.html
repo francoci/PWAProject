@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="slidershow">
+        <div class="cycle-slideshow" data-cycle-fx="tileSlide" data-cycle-timeout="5000" data-cycle-slides="> a"  data-cycle-pause-on-hover="true" data-cycle-prev="#prev" data-cycle-next="#next">
+            <a href=""><img src="http://localhost:3000/images/general/slide1.png"></a>
+            <a href=""><img src="http://localhost:3000/images/general/slide2.png"></a>
+            <a href=""><img src="http://localhost:3000/images/general/slide3.png"></a> 
+        </div>
+    </div>
+
+    <div class="slideNavigation">
+        <div id="prev"><i class="fas fa-chevron-left"></i></div>
+        <div id="next"><i class="fas fa-chevron-right"></i></div>
+    </div>
+
+    <h1>Ultimas publicadas</h1>
+
+    <div class="row">
+        <div class="col-2" *ngFor = "let p of peliculas">
+            <div class="pelicula">
+                <a [routerLink]="['/pelicula/', p.id_pelicula]">
+                <div class="imgPelicula">
+                    <img src = "{{'http://localhost:3000/' + p.imagen_pelicula}}">
+                    <div class="overlay"></div>
+                    <div class="texto">
+                        <h2>{{p.nombre_pelicula}}</h2>
+                        <h4>({{p.ano_pelicula}})</h4>
+                    </div>
+                </div>
+                </a>
+            </div>
+        </div>
+    </div> 
+</div>

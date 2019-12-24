@@ -1,0 +1,196 @@
+.container {
+    width: 90%;
+    height: auto;
+    overflow: hidden;
+    padding: 1em;
+}
+
+.contDatos {
+    height: 500px;
+    width: 250px;
+    margin: 1em 0 0 1em;
+    padding: 1em;
+    float: left;
+}
+
+.contImg {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #E6B020;
+    margin: 0 auto;
+}
+
+.contImg img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+h3 {
+    font-family: 'Bree Serif', serif;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 0.5em; 
+    color: #E6B020;
+    text-shadow: -2px 2px black;
+}
+
+.resenasRecientes {
+    width: 70%;
+    height: auto;
+    float: right;
+    margin: 1em 1em 0 0;
+    padding: 0.5em;
+}
+
+.resena {
+    width: 90%;
+    margin: 0 auto 1.5em;
+    background-color: rgba(44, 48, 54,0.5);
+    padding: 1.5em;
+    border-radius: 15px;
+}
+h2 {
+    font-family: 'Lobster', cursive;
+    font-size: 3em;
+    color: #E6B020;
+    text-shadow: -2px 2px black;
+    text-align: center;
+    width: 100%;
+    margin: 0.5em 0;
+}
+
+h4 {
+    font-family: 'Bree Serif', serif;
+    font-size: 1.8em;
+    text-align: left;
+    color: white;
+    text-shadow: -2px 2px black;
+}
+
+h5 {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: left;
+    color: white;
+    text-shadow: -2px 2px black;
+}
+
+.puntaje {
+    color: #E6B020;
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5em;
+    text-align: justify;
+    color: white;
+    text-shadow: -2px 2px black;
+    font-style: italic;
+}
+
+.linea {
+    clear: both;
+    width: 95%;
+    height: 5px;
+    background-color: #E6B020;
+    margin: 4em auto;
+    border-radius: 5px;
+}
+
+.peliculasFavoritas {
+    clear: both;
+    width: 100%;
+    height: auto;
+    margin: 1em auto;
+}
+
+.pelicula {
+    position: relative;
+    width: 15%;
+    height: 250px;
+    border-radius: 15px;
+    margin: 2em 0.5em;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.imgPelicula {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.imgPelicula img {
+    width: 100%;
+    height: 100%;
+    transition: all 0.75s ease;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 15px;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+
+    transition: 0.5s ease;
+}
+
+.texto {
+    position: absolute;
+    top: 35%;
+    left: 6%;
+    width: 88%;
+    height: 60%;
+    opacity: 0;
+    transition: 0.5s ease;
+    overflow: visible;
+}
+
+.texto h2 {
+    font-family: 'Calistoga', cursive;
+    font-size: 1.4em;
+    color: white;
+    text-align: center;
+    text-shadow: -2px 2px black;
+    overflow: visible;
+}
+
+.texto h4 {
+    font-family: 'Bree Serif', serif;
+    font-size: 1.2em;
+    color: white;
+    text-align: center;
+    text-shadow: -2px 2px black;
+}
+
+.pelicula:hover {
+    box-shadow: 0 0 20px #000000;
+    transition: all 0.5s ease;
+}
+
+.pelicula:hover .imgPelicula img{
+    transform: scale(1.2);
+}
+
+.pelicula:hover .overlay{
+    opacity: 1;
+}
+
+.pelicula:hover .texto {
+    opacity: 1;
+} 
+
+.pelicula a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}

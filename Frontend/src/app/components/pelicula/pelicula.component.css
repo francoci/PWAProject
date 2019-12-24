@@ -1,0 +1,287 @@
+/* Contenedores (Rows)*/
+
+.contenedorPelicula {
+    width: 95%;
+    height: auto;
+    margin: 3em auto 0;
+}
+
+.sinopsis {
+    height: auto;
+}
+
+.contenedorResenas {
+    width: 95%;
+    margin: 0.5em auto;
+    height: auto;
+}
+
+.contenedorResena {
+    width: 100%;
+    margin: 0.5em auto;
+}
+
+/*Subcontenedores (Columnas)*/
+.imgBtn {
+    height: 500px;
+}
+
+.resena {
+    margin: 3em 0;
+}
+
+.imgUser {
+    height: 150px;
+    margin: 1.5em 0;
+}
+
+
+/*Otros contenedores*/
+.imgPelicula {
+    height: 70%;
+    margin-bottom: 1em;
+}
+
+.botones {
+    height: 20%;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+/*Imagen de la pelicula*/
+.imgPelicula img, .imgUser img {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 20px black;
+    border: 3px solid #E6B020;
+}
+
+.imgPelicula img {
+    border-radius: 15px;
+}
+
+/*Imagen de usuario*/
+.imgUser img {
+    border-radius: 50%;
+}
+
+/*Botonera*/
+.boton {
+    width: 40%;
+    height: 50px;
+
+    border: none;
+    border-radius: 10px;
+
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: white;
+    letter-spacing: 0.1em;
+    background-color: #424952;
+
+    position: absolute;
+    left: 30%;
+}
+
+.boton:hover {
+    background-color: #292c31;
+    transition: 0.5s ease;
+}
+
+/*Texto*/
+.sinopsis h2, .sinopsis p, .resena h5, .resena p, h2, i {
+    color: rgb(235, 222, 187);
+}
+
+.sinopsis p, .resena p {
+    font-family: 'Lato', sans-serif;
+    text-align: justify;
+}
+
+.sinopsis h2, .resena h5, h2 {
+    font-family: 'Calistoga', cursive;
+    text-align: left;
+}
+
+.sinopsis h2 {
+    font-size: 2.5em;
+    text-align: left;
+    width: 90%;
+    float: left;
+    color: #E6B020;
+}
+
+.sinopsis p {
+    font-size: 1.3em;
+    font-weight: 600;
+    clear: both;
+    text-shadow: -1px 1px 1px black;
+}
+
+.linea {
+    clear: both;
+    width: 95%;
+    height: 5px;
+    background-color: #E6B020;
+    margin: 0 auto 2em;
+    border-radius: 5px;
+}
+
+.resena h5 {
+    font-size: 1.3em;
+    text-shadow: -1px 1px 1px black;
+}
+
+.puntaje {
+    font-size: 1em;
+    color: #f0ec2a;
+    text-shadow: -2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.resena p {
+    font-size: 1.2em;
+    text-shadow: -1px 1px 1px black;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2.5em;
+    color: #E6B020;
+    text-shadow: -1px 1px 10px black;
+}
+
+.message {
+    text-align: center;
+    width: 100%;
+}
+
+.like, .unlike {
+    border: none;
+    background: none;
+    float: right;
+    width: 6%;
+    margin: 0.2em;
+    box-sizing: border-box;
+}
+
+.like i {
+    color: #cf463c;
+}
+
+i {
+    font-size: 2.5em;
+}
+
+.modalHead {
+    font-family: 'Lato', sans-serif;
+    color: #292c31;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align:center;
+    width: 100%;
+}
+
+.rating {
+    width: 160px;
+    margin: 0.5em auto;
+}
+
+.rating button {
+    display: inline-block;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rating button i {
+    font-size: 25px;
+    color: #101010;
+    text-shadow: -2px 2px 5px rgba(0,0,0,0.5);
+    transition: 0.5s ease;
+}
+
+.rating button i:hover{
+    color: #f0ec2a;
+}
+
+.seleccionado {
+    color: #f0ec2a !important;
+}
+
+.label {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #292c31;
+    width: 90%;
+    margin-left: 1em;
+}
+
+.modalTA {
+    border-radius: 10px;
+    resize: none;
+    width: 90%;
+    height: 200px;
+    margin: 0.5em auto;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2em;
+    text-align: justify;
+}
+
+.contBtn {
+
+    width: 25%;
+    height: 45px;
+    margin: 0.5em auto;
+
+}
+
+.modalBtn {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: #434e5f;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2em;
+    color: white;
+    font-weight: bold;
+}
+
+.modalBtn i {
+    font-size: 1.2em;
+    color: white;
+}
+
+.error {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    color: rgb(235, 13, 13);
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.errorRate {
+    text-align: center;
+}
+
+.mensajeGeneral {
+    display: block;
+    width: 90%;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(105, 245, 40);
+    margin: 0 auto;
+}
+
+.rojo {
+    color: rgb(235, 13, 13);
+}

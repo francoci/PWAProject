@@ -1,0 +1,64 @@
+.container {
+    width: 90%;
+    height: 500px;
+    overflow: hidden;
+}
+
+h4 {
+    font-family: 'Lobster', cursive;
+    font-size: 4em;
+    text-shadow: -1px 1px black;
+    text-align: center;
+    margin: 1em auto 0.5em;
+    width: 100%;
+    display: block;
+    color: #E6B020;
+}
+
+p {
+    font-family: 'Calistoga', cursive;
+    font-size: 1.8em;
+    text-align: justify;
+    text-shadow: -1px 1px 1px black;
+    color: rgb(235, 222, 187);
+    width: 85%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1em;
+}
+
+.contBtns {
+    width: 85%;
+    height: 70px;
+    margin: 0.5em auto;
+    /* border: 2px solid white; */
+}
+
+.contBtns a {
+    text-decoration: none;
+    font-family: 'Calistoga', cursive;
+    font-size: 1.3em;
+    color: rgb(235, 222, 187);
+
+    text-align: center;
+    line-height: 65px;
+    vertical-align: middle;
+
+    
+    display: inline-block;
+    width: 20%;
+    height: 100%;
+    margin: 0 1em;
+
+    border-radius: 10px;
+    background-color: #424952;
+}
+
+.contBtns a:first-of-type{
+    margin-left: 6.5em;
+}
+
+.contBtns a:hover {
+    background-color: #292c31;
+    transition: 0.5s ease;
+}

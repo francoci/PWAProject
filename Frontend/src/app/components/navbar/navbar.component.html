@@ -1,0 +1,59 @@
+<nav>
+    <div class="row">
+        <div class="col logo">
+            <a [routerLink]="['/home']"><img src= "{{url_server + '/images/general/logo6.png'}}"></a>
+        </div>
+    </div>
+    
+    <div class = "navbar">
+        <div class = "hamburger-menu">
+            <div class = "line line-1"></div>
+            <div class = "line line-2"></div>
+            <div class = "line line-3"></div>
+        </div>
+            
+        <ul class = "nav-list">
+            <li class = "nav-item">
+                <a [routerLink]="['/home']" class = "nav-link">Home</a>
+            </li>
+            <li class = "nav-item">
+                <a [routerLink]="['/peliculas']" class = "nav-link">Peliculas</a>
+            </li>
+            <div *ngIf="!login; else islogin">
+                <li class = "nav-item">
+                    <a [routerLink]="['/login']" class = "nav-link">Log in</a>     
+                </li>
+                <li class = "nav-item">
+                    <a [routerLink]="['/registro']" class = "nav-link">Registro</a>
+                </li>
+            </div>
+
+            <ng-template #islogin>
+                <div *ngIf = "admin; else noAdmin">
+                    <li class = "nav-item">
+                        <a [routerLink]="['/perfil/', idUser]" class = "nav-link">Perfil</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a [routerLink]="['/admin']" class = "nav-link">Panel Admin</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class = "nav-link" (click)="logout()">Log out</a>
+                    </li>
+                </div>
+            </ng-template>
+
+            <ng-template #noAdmin>
+                <li class = "nav-item">
+                    <a [routerLink]="['/perfil/', idUser]" class = "nav-link">Perfil</a>
+                </li>
+                <li class = "nav-item">
+                    <a class = "nav-link" (click)="logout()">Log out</a>
+                </li>
+            </ng-template>
+
+        </ul>
+    </div>
+
+</nav>
+
+

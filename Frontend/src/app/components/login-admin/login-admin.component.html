@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <h3>Admin</h3>
+
+        <span class = "error general" *ngIf = "error != ''">{{error}}</span>
+
+        <form [formGroup] = "form" (ngSubmit)="login()" class = "formLogin">
+            <div class="form-group">
+                <label for="user">Mail</label> <br>
+
+                <span class = "error" *ngIf = "form.get('user').status != 'VALID' && form.get('user').touched">Usuario inválido.</span>
+
+                <input type="email" class = "form-control" name = "user" formControlName = "user" placeholder = "nombre@extension.com..">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Contraseña</label> <br>
+    
+                <span class = "error" *ngIf = "form.get('password').status != 'VALID' && form.get('password').touched">Password inválido.</span>
+    
+                <input type="password" class = "form-control" name = "password" formControlName = "password" placeholder = "Contraseña..">
+            </div>
+
+            <div class="contBtn">
+                <button type="submit" [disabled] = "form.invalid" class = "btnLogin">Login</button>
+            </div>    
+        </form>
+
+    </div>
+</div>
