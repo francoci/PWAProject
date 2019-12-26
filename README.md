@@ -1,7 +1,7 @@
 # PWAProject
 Proyecto realizado para el curso Programador Web Avanzado. Los archivos disponibles corresponden con los del Frontend (Angular), Backend (Node.JS - Express) y un archivo SQL con la base de datos, dentro de las respectivas carpetas. Para correrlo, descargar todo e iniciar un servidor local. 
 
-Mediante PHPMyAdmin u otro gestor de BD crear la base e importar las tablas con el archivo SQL. Luego, inicializar el backend mediante la terminal con el comando "nodemon npm start". Crear los campos MAIL_USER y MAIL_PASSWORD en el archivo .env del backend, con los correspondientes datos. Por ultimo, inicializar el Frontend con el comando "ng serve --open".
+Mediante PHPMyAdmin u otro gestor de BD crear la base e importar las tablas con el archivo SQL. Luego, inicializar el backend mediante la terminal con el comando "nodemon npm start". Por ultimo, inicializar el Frontend con el comando "ng serve --open".
 
 El sitio consiste en una página web de peliculas, en la cual se pueden realizar reseñas de las mismas. Existen dos tipos de usuarios, el usuario comun y el usuario del tipo admin.
 
